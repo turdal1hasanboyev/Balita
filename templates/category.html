@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<section class="site-section">
+      <div class="container">
+            <div class="row mb-4">
+                  <div class="col-md-6">
+                        <h2 class="mb-4">Category: {{ category.title }}</h2>
+                  </div>
+            </div>
+            <div class="row blog-entries">
+                  <div class="col-md-12 col-lg-8 main-content">
+                        <div class="row mb-5 mt-5">
+                              <div class="col-md-12">
+                                    {% for article in articles %}
+                                    <div class="post-entry-horzontal">
+                                          <a href="{% url 'detail' article.slug %}">
+                                                <!-- {{ article.get_absolute_url }} -->
+                                                <div class="image element-animate" data-animate-effect="fadeIn"
+                                                      style="background-image: url({{ article.image_1.url}});"></div>
+                                                <span class="text">
+                                                      <div class="post-meta">
+                                                            <span class="category">{{ category.title }}</span>
+                                                            <span class="mr-2">{{ article.created_at|date }} </span>
+                                                            &bullet;
+                                                            <span class="ml-2"><span class="fa fa-comments"></span> {{ article.comment_set.count }}</span>
+                                                      </div>
+                                                      <h2>{{ article.title }}
+                                                      </h2>
+                                                </span>
+                                          </a>
+                                    </div>
+                                    {% endfor %}
+                              </div>
+                        </div>
+
+                        {% include 'paginator.html' %}
+
+                  </div>
+
+                  {% include 'rside.html' %}
+
+            </div>
+      </div>
+</section>
+
+{% endblock %}
