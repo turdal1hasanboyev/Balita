@@ -1,6 +1,9 @@
 from django.db import models
+
 from apps.account.models import Account
+
 from django.template.defaultfilters import slugify  # new
+
 from django.urls import reverse
 
 

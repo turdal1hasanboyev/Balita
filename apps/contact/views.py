@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import GetInTouchForm
+
+from apps.contact.forms import GetInTouchForm
 
 
 def get_in_touch(request):

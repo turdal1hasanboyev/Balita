@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import index, article_detail, category_view
+
+from apps.article.views import index, article_detail, category_view
 
 
 urlpatterns = [

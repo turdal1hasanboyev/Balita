@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import Article, Category, Comment
+
+from apps.article.models import Article, Category, Comment
+
 from django.core.paginator import Paginator
 
 
