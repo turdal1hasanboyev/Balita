@@ -1,15 +1,17 @@
 from django.shortcuts import render, redirect
 
-from apps.article.models import Article, Category, Comment
-
 from django.core.paginator import Paginator
+
+from apps.article.models import Article, Category, Comment
 
 
 def index(request):
     tag = request.GET.get('tag')
 
     articles = Article.objects.all().order_by('-id')
+
     banners = articles.filter(for_banner=True)
+
     more_articeles = articles.all().order_by('?')[:4]
 
     if tag:
@@ -37,6 +39,7 @@ def article_detail(request, slug):
     if request.method == "POST":
         if not request.user.is_authenticated:
             return redirect("login")
+        
         name = request.POST.get("name")
         email = request.POST.get("email")
         comment = request.POST.get("comment")
