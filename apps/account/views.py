@@ -7,7 +7,7 @@ from apps.account.models import Account
 
 def register_view(request):
     if request.user.is_authenticated:
-        return redirect("/")
+        return redirect("home")
 
     if request.method == "POST":
         full_name = request.POST.get('full_name')
@@ -29,13 +29,13 @@ def register_view(request):
 
         login(request, user)
 
-        return redirect("/")
+        return redirect("home")
     
     return render(request, 'register.html')
 
 def login_view(request):
     if request.user.is_authenticated:
-        return redirect("/")
+        return redirect("home")
 
     if request.method == "POST":
         username = request.POST.get('username')
@@ -45,11 +45,11 @@ def login_view(request):
 
         login(request, user)
 
-        return redirect("/")
+        return redirect("home")
     
     return render(request, 'login.html')
 
 def logout_view(request):
     logout(request)
 
-    return redirect("/")
+    return redirect("home")
