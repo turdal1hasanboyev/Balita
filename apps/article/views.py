@@ -45,7 +45,7 @@ def article_detail(request, slug):
         
         Comment.objects.create(
             article_id=article.id,
-            user=request.user,
+            user_id=request.user.id,
             name=name,
             email=email,
             comment=comment,

@@ -16,6 +16,7 @@ class Category(models.Model):
     def save(self, *args, **kwargs):  # new
         if not self.slug:
             self.slug = slugify(self.title)
+
         return super().save(*args, **kwargs)
 
     def __str__(self) -> str:
@@ -48,6 +49,7 @@ class Article(models.Model):
     def save(self, *args, **kwargs):  # new
         if not self.slug:
             self.slug = slugify(self.title)
+            
         return super().save(*args, **kwargs)
 
     def __str__(self) -> str:

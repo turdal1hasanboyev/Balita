@@ -1,7 +1,7 @@
 from apps.article.models import Article, Category, Tag
 
 
-def data():
+def data(request):
    categories = Category.objects.all().order_by('title')
    last_articles = Article.objects.all()
    tags = Tag.objects.all().order_by('title')
