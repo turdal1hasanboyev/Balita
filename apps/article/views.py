@@ -33,6 +33,7 @@ def article_detail(request, slug):
     article = Article.objects.get(slug__exact=slug)
 
     articles = Article.objects.filter(category_id=article.category.id)
+
     comments = Comment.objects.filter(article_id=article.id)
 
     if request.method == "POST":
@@ -66,6 +67,7 @@ def category_view(request, slug):
     page_number = request.GET.get('page')
 
     category = Category.objects.get(slug__exact=slug)
+    
     articles = Article.objects.filter(category__slug__exact=slug).order_by('-created_at')
 
     if tag:
