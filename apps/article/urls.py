@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.article.views import index, article_detail, category_view
+from .views import index, article_detail, category_view
 
 
 urlpatterns = [

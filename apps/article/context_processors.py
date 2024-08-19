@@ -1,4 +1,4 @@
-from apps.article.models import Article, Category, Tag
+from .models import Article, Category, Tag
 
 
 def data(request):

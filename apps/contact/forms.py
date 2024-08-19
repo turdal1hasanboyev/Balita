@@ -1,6 +1,6 @@
 from django import forms
 
-from apps.contact.models import GetInTouch
+from .models import GetInTouch
 
 
 class GetInTouchForm(forms.ModelForm):

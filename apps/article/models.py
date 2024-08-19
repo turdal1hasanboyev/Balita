@@ -19,14 +19,14 @@ class Category(models.Model):
 
         return super().save(*args, **kwargs)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.title
 
 
 class Tag(models.Model):
     title = models.CharField(max_length=225, null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.title   
 
 
@@ -52,7 +52,7 @@ class Article(models.Model):
             
         return super().save(*args, **kwargs)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.title
 
 
@@ -64,6 +64,6 @@ class Comment(models.Model):
     comment = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.name
     

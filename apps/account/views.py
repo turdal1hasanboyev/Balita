@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from django.contrib.auth import authenticate, login, logout
 
-from apps.account.models import Account
+from .models import Account
 
 
 def register_view(request):
